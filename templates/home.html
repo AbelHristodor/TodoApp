@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>todo</title>
+</head>
+
+<body>
+    <h1>Todo App</h1>
+
+    <form method="POST">{% csrf_token %}
+        <label for="details">Todo:</label>
+        <input name="details" id="details" placeholder="Todo">
+        <label for="due_date">Due date:</label>
+        <input name="due_date" id="due_date" placeholder="Due date yyyy-mm-dd">
+        <button type="submit" onsubmit="addTodo()">Submit</button>
+    </form>
+
+    <div class="result">
+        <ul>
+        </ul>
+    </div>
+
+    <button id="deleteAll" type="button" onClick="deleteAll()">Delete All</button>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="/static/cookie_plugin.js"></script>
+    <script src="/static/todo_common.js"></script>
+</body>
+
+</html>
